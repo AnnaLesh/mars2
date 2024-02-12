@@ -148,6 +148,7 @@ def astronaut_selection():
                                 <div class="input-group">
                                   <textarea class="form-control" aria-label="С текстовым полем"></textarea>
                                 </div>
+                                <p>Приложите фотографию</p>
                                 <div class="input-group mb-3">
   <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Выберите файл">
 </div>
@@ -156,6 +157,7 @@ def astronaut_selection():
                               <label class="form-check-label" for="flexCheckDefault">
                                 Готовы остаться на Марсе?
                               </label>
+                              
                             </div>
                               
                               <button type="submit" class="btn btn-primary">Отправить</button>
