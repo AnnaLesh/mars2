@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask import request
 app = Flask(__name__)
@@ -229,6 +230,30 @@ def carousel():
                     </div>
                   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
                 </html>'''
+
+@app.route('/choice<planet>')
+def choice(planet):
+    return f'''<!doctype html>
+                    <html lang="en">
+                      <head>
+                        <meta charset="utf-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                       <link rel="stylesheet"
+                       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                       crossorigin="anonymous">
+                        <title>Варианты выбора</title>
+                      </head>
+                      <body style="margin-top:30px; margin-left:30px">
+                        <h1 style="color:purple; font-weight:bold">Мое предложение: {planet}</h1>
+                        <h3>Эта планета близка к Земле;</h3>
+                        <a style="height:50px; font-size: 25px" href="#" class="list-group-item list-group-item-action list-group-item-success">На ней много необходимых ресурсов</a>
+                        <a style="height:50px; font-size: 25px" href="#" class="list-group-item list-group-item-action list-group-item-secondary">На ней есть вода и атмосфера</a>
+                        <a style="height:50px; font-size: 25px" href="#" class="list-group-item list-group-item-action list-group-item-warning">На ней есть небольшое магнитное поле</a>
+                            <a style="height:50px; font-size: 25px" href="#" class="list-group-item list-group-item-action list-group-item-danger">Наконец, она просто красива!</a>
+                        
+                      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                    </html>'''
 
 
 if __name__ == '__main__':
