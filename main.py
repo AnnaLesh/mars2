@@ -1,5 +1,5 @@
 from flask import Flask
-
+from flask import request
 app = Flask(__name__)
 
 
@@ -164,6 +164,71 @@ def astronaut_selection():
                             </form>
                                                   </body>
                                                 </html>"""
+
+
+
+
+@app.route('/results/<nickname>/<int:level>/<float:rating>')
+def results(nickname, level, rating):
+    return f'''<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                   <link rel="stylesheet"
+                   href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                   integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                   crossorigin="anonymous">
+                    <title>Варианты выбора</title>
+                  </head>
+                  <body>
+                    <h1>Результаты отбора</h1>
+                    <h2>Претендента на участие в миссии {nickname}</h2>
+                    <a style="height:50px; font-size: 25px" href="#" class="list-group-item list-group-item-action list-group-item-success">Поздравляем! Ваш рейтинг после {level} этапа отбора</a>
+                    <a style="height:50px; font-size: 25px" href="#" class="list-group-item list-group-item-action list-group-item">составляет {rating}!</a>
+                    <a style="height:50px; font-size: 25px" href="#" class="list-group-item list-group-item-action list-group-item-warning">Желаем удачи!</a>
+                  </body>
+                </html>'''
+
+
+@app.route('/carousel')
+def carousel():
+    return f'''<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                   <link rel="stylesheet"
+                   href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                   integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                   crossorigin="anonymous">
+                    <title>Карусель</title>
+                  </head>
+                  <body style="margin-top:30px; margin-left:30px">
+                    <h1 style="color:purple; font-weight:bold">Котики спасут мир</h1>
+                    <div id="carouselExample" class="carousel slide" style="width:500px">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="https://i.pinimg.com/564x/9e/bc/02/9ebc0219e877bcb545baa6ccbd5b11a8.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://i.pinimg.com/564x/63/3a/60/633a608ad5641c76aa92c058794ae742.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://i.pinimg.com/564x/18/32/1c/18321cf4bb11854f96bf4362ede4766b.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущий</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующий</span>
+                      </button>
+                    </div>
+                  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                </html>'''
 
 
 if __name__ == '__main__':
